@@ -8,3 +8,11 @@ Tech Stack -
 - NextJS
 - Solidity
 - Hardhat
+
+Initially it will have 5 tokens
+
+- OneX (onex)
+- DuoX (duox)
+- TriX (trix)
+- SuadX (suadx)
+- PentX (pentx)
