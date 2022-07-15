@@ -3,11 +3,11 @@ pragma solidity^0.8.4;
 
 import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
 
-contract OneX is ERC20 {
+contract TriX is ERC20 {
   // max spupply of token
   uint256 maxSupply = 10000;
 
-  constructor(uint256 initialSupply) ERC20("OneX", "OneX") {
+  constructor(uint256 initialSupply) ERC20("TriX", "TriX") {
     _mint(msg.sender, initialSupply);
   }
 
