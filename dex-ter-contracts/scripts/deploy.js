@@ -4,26 +4,47 @@
 // You can also run a script with `npx hardhat run <script>`. If you do that, Hardhat
 // will compile your contracts, add the Hardhat Runtime Environment's members to the
 // global scope, and execute the script.
-const hre = require("hardhat");
+const { ethers } = require("hardhat");
 
 async function main() {
-  const currentTimestampInSeconds = Math.round(Date.now() / 1000);
-  const ONE_YEAR_IN_SECS = 365 * 24 * 60 * 60;
-  const unlockTime = currentTimestampInSeconds + ONE_YEAR_IN_SECS;
 
-  const lockedAmount = hre.ethers.utils.parseEther("1");
+  // deploying the OneX Token Contract
+  const _oneXContract = await ethers.getContractFactory("OneX")
+  const oneXContract = await _oneXContract.deploy()
+  await oneXContract.deployed()
+  console.log("OneX Contract Address: ", oneXContract.address)
 
-  const Lock = await hre.ethers.getContractFactory("Lock");
-  const lock = await Lock.deploy(unlockTime, { value: lockedAmount });
+  // deploying the DuoX Token Contract
+  const _duoXContract = await ethers.getContractFactory("DuoX")
+  const duoXContract = await _duoXContract.deploy()
+  await duoXContract.deployed()
+  console.log("DuoX Contract Address: ", duoXContract.address)
 
-  await lock.deployed();
+  // deploying the TriX Token Contract
+  const _triXContract = await ethers.getContractFactory("TriX")
+  const triXContract = await _triXContract.deploy()
+  await triXContract.deployed()
+  console.log("TriX Contract Address: ", triXContract.address)
 
-  console.log("Lock with 1 ETH deployed to:", lock.address);
+  // deploying the SquadX Token Contract
+  const _squadXContract = await ethers.getContractFactory("SquadX")
+  const squadXContract = await _squadXContract.deploy()
+  await squadXContract.deployed()
+  console.log("SquadX Contract Address: ", squadXContract.address)
+
+  // deploying the PentX Token Contract
+  const _pentXContract = await ethers.getContractFactory("PentX")
+  const pentXContract = await _pentXContract.deploy()
+  await pentXContract.deployed()
+  console.log("PentX Contract Address: ", pentXContract.address)
+
 }
 
 // We recommend this pattern to be able to use async/await everywhere
 // and properly handle errors.
-main().catch((error) => {
-  console.error(error);
-  process.exitCode = 1;
-});
+main()
+  .catch((error) => {
+    console.error(error);
+    process.exitCode = 1;
+  }
+);
