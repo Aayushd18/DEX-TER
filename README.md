@@ -11,8 +11,8 @@ Tech Stack -
 
 Initially it will have 5 tokens
 
-- OneX (onex)
-- DuoX (duox)
-- TriX (trix)
-- SuadX (suadx)
-- PentX (pentx)
+- OneX (OneX)
+- DuoX (DuoX)
+- TriX (TriX)
+- SuadX (SquadX)
+- PentX (PentX)
