@@ -7,7 +7,7 @@ contract OneX is ERC20 {
   // max spupply of token
   uint256 maxSupply = 10000;
 
-  constructor(uint256 initialSupply) ERC20("OneX", "OneX") {
+  constructor(uint256 initialSupply, string memory _name, string memory _symbol) ERC20(_name, _symbol) {
     _mint(msg.sender, initialSupply);
   }
 
